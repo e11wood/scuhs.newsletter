@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Newsletter</title>
+    <style>
+        /* Basic CSS for responsiveness */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .nav {
+            text-align: center;
+            padding: 10px;
+            background-color: #ddd;
+        }
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .page {
+            display: none; /* Hide all pages by default */
+            text-align: center;
+            padding: 20px;
+        }
+        .page.active {
+            display: block; /* Show only the active page */
+        }
+        img {
+            max-width: 100%; /* Makes images responsive */
+            height: auto;
+        }
+        @media (max-width: 600px) {
+            .header { font-size: 1.2em; }
+            .nav a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>SCUHS Monthly Newsletter - March 2025</h1>
+    </div>
+
+    <!-- Navigation (optional) -->
+    <div class="nav">
+        <a href="#" onclick="showPage('page1')">Page 1</a>
+        <a href="#" onclick="showPage('page2')">Page 2</a>
+        <a href="#" onclick="showPage('page3')">Page 3</a>
+    </div>
+
+    <!-- Pages (each with a single graphic) -->
+    <div id="page1" class="page active">
+        <img src="page1.png" alt="Page 1">
+    </div>
+    <div id="page2" class="page">
+        <img src="page2.png" alt="Page 2">
+    </div>
+    <div id="page3" class="page">
+        <img src="page3.png" alt="Page 3">
+    </div>
+
+    <!-- Simple JavaScript for page switching -->
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            // Show the selected page
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
